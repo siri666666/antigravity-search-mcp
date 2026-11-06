@@ -113,7 +113,7 @@ def execute_google_search(query: str) -> str:
     )
 
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=60) as resp:
             res_data = json.loads(resp.read().decode("utf-8", errors="replace"))
             text_blocks = []
             for item in res_data.get("output", []):
